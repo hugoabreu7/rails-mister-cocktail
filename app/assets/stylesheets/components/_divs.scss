@@ -1,10 +1,11 @@
 .empty {
-  height: 30px;
+  height: 50px;
 }
 
-.site-container {
-  margin: 0 auto;
-  width: 96%;
+.background {
+  background: linear-gradient(rgba(180,209,31,0.2), rgba(248, 131, 121, 0.2));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .cocktail-description {
@@ -27,7 +28,6 @@
 }
 
 .footer {
-  position: fixed;
   width: 100%;
   bottom: 0;
   display: flex;
