@@ -1,0 +1,42 @@
+.empty {
+  height: 30px;
+}
+
+.site-container {
+  margin: 0 auto;
+  width: 96%;
+}
+
+.cocktail-description {
+  list-style-type: none;
+  padding: 0px;
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  border-radius: 4px;
+}
+
+.cocktail-container {
+  padding: 10px 6px;
+&:hover {
+  background: rgba(255, 242, 0, 0.2)
+  }
+}
+
+.cocktail-row {
+  text-decoration: none;
+  margin: 4px;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 253, 0.4);
+  align-items: center;
+  padding: 6px 20px;
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+}

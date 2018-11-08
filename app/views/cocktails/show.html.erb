@@ -1,13 +1,24 @@
-<h1>Olá</h1>
-<%= @cocktail.name %>
+<h1><%= @cocktail.name %> details</h1>
 
+<p>Please perform the following actions to make the <%= @cocktail.name %>. You'll need to follow them carefully, otherwise you'll not get so drunk! 😂</p>
+
+<div class="cocktail-description">
 <% @cocktail.doses.each do |dose| %>
-<li>
-  <%= dose.ingredient.name %>
-  <%= dose.description %>
-</li>
+  <div class="cocktail-container">
+    <div class="cocktail-row">
+      <strong>Ingredient:</strong>
+      <%= dose.ingredient.name %> </div>
+      <div class="cocktail-row">
+      <strong>What to do with it:</strong>
+      <%= dose.description %>
+    </div>
+  </div>
 <% end %>
+</div>
 
-<p>How about add a dose and get even more drunk?</p>
+<div class="empty"></div>
 
-<%= link_to "Add now!", new_cocktail_dose_path(@cocktail) %>
+
+<p>How about add a dose and get even more drunk? 😵😵</p>
+
+<div class="new-button"> <p class="btn btn-success"><%= link_to "Add now!", new_cocktail_dose_path(@cocktail) %></p></div>

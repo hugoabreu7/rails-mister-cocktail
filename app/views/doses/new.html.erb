@@ -1,10 +1,13 @@
-<h1>Getting drunk soon</h1>
+<h1>Getting drunk soon... 😏</h1>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "add a dose!", class: "btn btn-primary" %>
-<% end %>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-md-offset-3">
 
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, selected: 1, label: "What's the ingredient?" %>
+      <%= f.input :description, label: "What to do with this ingredient?" %>
+      <%= f.submit "add a dose!", class: "btn btn-success" %>
+    <% end %>
 
-<!-- <p>, selected: 1</p> -->
+  </div>
+</div>
