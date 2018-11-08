@@ -1,7 +1,21 @@
-<h1>Hey</h1>
+<h1 id="index-title">Welcome to my cocktails page</h1>
 
-<ul>
-<% @cocktails.each do |cocktail| %>
-<li> <%=link_to cocktail.name, cocktail_path(cocktail) %> </li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row row-color">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+        <div> <%= link_to cocktail_path(cocktail) do %>
+
+          <div class="card" style="background-image: linear-gradient(rgba(180,209,31,0.2), rgba(255,242,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-category">Super choice</div>
+            <div class="card-description">
+              <h2> <%= cocktail.name %> </h2>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
+    </div> <% end %>
+  </div>
+</div>
+
