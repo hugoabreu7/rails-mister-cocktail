@@ -1,20 +1,46 @@
-<h1><%= @cocktail.name %> details</h1>
+<h1 style="padding-top: 16vh;"><%= @cocktail.name %> details</h1>
 
-<p>Please perform the following actions to make the <%= @cocktail.name %>. You'll need to follow them carefully, otherwise you'll not get so drunk! 😂</p>
+<div class="cocktail-container">
 
-<div class="cocktail-description">
-<% @cocktail.doses.each do |dose| %>
-  <div class="cocktail-container">
-    <div class="cocktail-row">
-      <strong>Ingredient:</strong>
-      <%= dose.ingredient.name %> </div>
-      <div class="cocktail-row">
-      <strong>What to do with it:</strong>
-      <%= dose.description %>
+
+<p style="padding-bottom: 40px;">Please perform the following actions to make the <%= @cocktail.name %>. You'll need to follow them carefully, otherwise you'll not get so drunk! 😂</p>
+
+  <div class="cocktail-grid">
+
+    <div class="cocktail-image-container">
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 300, crop: :fill, class:"cocktail-image"%>
     </div>
+  <% if @cocktail.doses.empty? %>
+
+      <div>
+        <h6> <%= @cocktail.name %> ingredients: </h6>
+        <p> There's no ingredients for this cocktail yet. Add some below! </p>
+      </div>
+      <div>
+        <h6> <%= @cocktail.name %> doses: </h6>
+        <p> There's no ingredients for this cocktail yet. Add some below! </p>
+      </div>
+
+      <% else %>
+
+      <% @cocktail.doses.each do |dose| %>
+
+      <div>
+        <strong>Ingredient:</strong>
+        <p> <%= dose.ingredient.name %> </p>
+      </div>
+      <div>
+        <strong>Doses:</strong>
+        <p> <%= dose.description %> </p>
+      </div>
+      <% end %>
+
+  <% end %>
+
   </div>
-<% end %>
-</div>
+
+
+
 
 <div class="empty"></div>
 
@@ -24,3 +50,6 @@
 <div class="new-button"> <p class="btn btn-success"><%= link_to "Add now!", new_cocktail_dose_path(@cocktail) %></p></div>
 
 <div class="new-button"> <p class="btn btn-info"><%= link_to "Back home", root_path %></p></div>
+
+</div>
+

@@ -11,6 +11,8 @@
         </div>
       <% end %>
       <%= f.input :name, label: "Add a cocktail name:" %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit "Let's go! 🍸", class: "btn btn-success" %>
     <% end %>
   </div>
